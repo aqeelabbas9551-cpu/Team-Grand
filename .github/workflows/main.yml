@@ -20,12 +20,8 @@ jobs:
       - name: Setup Gradle
         uses: gradle/actions/setup-gradle@v3
 
-      - name: Generate Wrapper and Build APK
+      - name: Build APK
         run: |
-          if [ -d "TeamGrandAndroid" ]; then
-            cd TeamGrandAndroid
-          fi
-          gradle wrapper
           chmod +x gradlew
           ./gradlew assembleDebug --stacktrace
 
